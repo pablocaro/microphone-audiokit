@@ -23,6 +23,8 @@ class ViewController: UIViewController {
     var timer = NSTimer()
     var increment:Double = 0
     
+    @IBOutlet weak var labelFrequency: UILabel!
+    @IBOutlet weak var labelAmplitude: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,10 +57,12 @@ class ViewController: UIViewController {
         
         if let frequency = tracker?.frequency {
             print("frequency: \(frequency)")
+            labelFrequency.text = String(frequency)
         }
         
         if let amplitude = tracker?.amplitude {
             print("amplitude: \(amplitude)")
+            labelAmplitude.text = String(amplitude)
         }
         
         increment += 0.5
